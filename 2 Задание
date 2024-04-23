@@ -1,0 +1,19 @@
+def custom_sort(arr_A, arr_B):
+    # Разделяем массив А на две части: элементы, которые есть в массиве В и остальные
+    part_A_in_B = [x for x in arr_A if x in arr_B]
+    part_A_not_in_B = [x for x in arr_A if x not in arr_B]
+
+    # Сортируем обе части
+    part_A_in_B.sort(key=lambda x: arr_B.index(x))
+    part_A_not_in_B.sort(reverse=True)
+
+    # Объединяем отсортированные части
+    sorted_A = part_A_in_B + part_A_not_in_B
+
+    return sorted_A
+
+# Пример использования функции
+arr_A = [2, 4, 1, 3, 2, 4, 6, 7, 9, 2, 19]
+arr_B = [2, 1, 4, 3, 6, 9]
+sorted_A = custom_sort(arr_A, arr_B)
+print(sorted_A)
