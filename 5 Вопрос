@@ -1,0 +1,30 @@
+-- Создание таблицы Department
+CREATE TABLE Department (
+    ID INT PRIMARY KEY,
+    NAME VARCHAR(50)
+);
+
+-- Наполнение таблицы Department
+INSERT INTO Department (ID, NAME) VALUES (1, 'Backend');
+INSERT INTO Department (ID, NAME) VALUES (2, 'DevOps');
+INSERT INTO Department (ID, NAME) VALUES (3, 'Android');
+INSERT INTO Department (ID, NAME) VALUES (4, 'iOS');
+
+-- Создание таблицы Users
+CREATE TABLE Users (
+    ID INT PRIMARY KEY,
+    SURNAME VARCHAR(50),
+    DEPARTMENT_ID INT,
+    SALARY INT,
+    FOREIGN KEY (DEPARTMENT_ID) REFERENCES Department(ID)
+);
+
+-- Наполнение таблицы Users
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES (1, 'Алексеев', 3, 50000);
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES (2, 'Петрухин', 3, 60000);
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES (3, 'Есенин', 2, 70000);
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES (4, 'Маяковский', 1, 80000);
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES (5, 'Нортон', 4, 90000);
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES (6, 'Антропов', 1, 100000);
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES (7, 'Андреев', 4, 110000);
+INSERT INTO Users (ID, SURNAME, DEPARTMENT_ID, SALARY) VALUES (8, 'Силантьев', 1, 120000);
