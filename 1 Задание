@@ -1,0 +1,8 @@
+def sort_array(arr):
+    sorted_arr = sorted(arr)
+    return sorted_arr
+
+# Пример использования функции
+input_array = [4, 2, 7, 1, 5]
+sorted_array = sort_array(input_array)
+print(sorted_array)
